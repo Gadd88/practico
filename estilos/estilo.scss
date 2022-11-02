@@ -1,0 +1,422 @@
+////////////////////////////////////////
+// COLORES
+////////////////////////////////////////
+$base: #060a0f;
+$sec: #494949;
+$outline: #ff6600;
+$text: transparentize($sec, .5);
+
+////////////////////////////////////////
+//ESTILOS GENERALES
+////////////////////////////////////////
+
+a{
+    margin: 0px;
+    padding: 0px;
+    @extend .tSlow;
+    &:hover{
+        color: $outline;
+    }
+}
+h1,h2,h3,h4,h5,h6{
+    color: $base;
+}
+p{
+    color:$sec;
+}
+
+.tSlow{
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.pad_100{
+    padding: 100px 0px;
+}
+
+.pad_200{
+    padding: 200px 0;
+}
+
+.center{
+    text-align: center;
+    margin: 0px auto;
+}
+.main-title{
+    font-weight: bold;
+    color: $base;
+    font-size: 60px;
+}
+
+///////////////////////////////
+/// Imagenes del sitio
+//////////////////////////////
+
+.rounded-circle{
+    width: 250px;
+    height:250px;
+    @extend .rombo;
+}
+.rombo{
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
+    @extend .tSlow;
+    &:hover{
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    }
+}
+.diamante{
+    display: block;
+    position: relative;
+    width: 90%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-image: url("../img/square_02.jpg");
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 50;
+    @extend .rombo;
+}
+
+
+
+////////////////////////////////////////
+/// inputs. textarea, buttons, etc
+////////////////////////////////////////
+
+input, select, option, textarea{
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid $base;
+    margin: 5px 0;
+    @extend .tSlow;
+    opacity: .5;
+    &:hover, &:focus{
+        opacity: 1;
+        color: $base;
+    }
+}
+textarea{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150px;
+    max-height: 250px;
+}
+button{
+    background-color: transparent;
+    text-transform: uppercase;
+    border: 1px solid $base;
+    padding: 10px 20px;
+    margin: 5px 0;
+    color: $base;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    opacity: .7;
+    @extend .tSlow;
+    &:hover{
+        opacity: 1;
+        background-color: $base;
+        color: #fff;
+    }
+}
+.black{
+    opacity: 1;
+    color: #fff;
+    background-color: $base;
+    &:hover{
+        background-color: $outline;
+        border: 1px solid $outline;
+    }
+}
+
+
+
+
+////////////////////////////////////////
+/// 
+////////////////////////////////////////
+body{
+    header{
+        nav{
+            width: 100%;
+            background-color: transparent;
+            padding: 10px 0px;
+            position: fixed;
+            border-bottom: 1px solid transparent;
+            z-index: 100;
+            @extend .tSlow;
+            /////// ANIMACION DE LA BARRA CON HOVER
+            &:hover{
+                background-color: #fff;
+                padding: 25px 0;
+                border: 1px solid transparent($base, .9);
+                .logo{
+                    img{
+                        width: 80%;
+                    }
+                }
+                ul{
+                    margin-top: 8px;
+                    li{
+                        a{
+                            color: $text;
+                        }
+                    }
+                }
+            }
+            ////////////////////////////////
+            .logo{
+                img{
+                    width: 100%;
+                    @extend .tSlow;
+                }
+            }
+            ul{
+                margin: 0;
+                margin-top: 15px;
+                padding: 0;
+                text-align: right;
+                @extend .tSlow;
+                .link-active{
+                    a{
+                        color: $base !important; 
+                        &:after{
+                            width: 100%;
+                            background-color: $base;
+                            @extend .tSlow;
+                        }
+                    }
+                }
+                li{
+                    display: inline-block;
+                    padding: 0 10px;
+                    a{
+                        position: relative;
+                        text-decoration: none;
+                        font-size: 16px;
+                        color: $text;
+                        @extend .tSlow;
+                        text-transform: uppercase;
+                        color: transparentize(#fff, .2);
+                        &:before{
+                            content:'';
+                            position: absolute;
+                            width: 100%;
+                            background-color: transparent;
+                            height: 1px;
+                            @extend .tSlow;
+                        }
+                        &:after{
+                            content:'';
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            width: 0%;
+                            background-color: transparent;
+                            height: 1px;
+                            @extend .tSlow;
+                        }
+                        &:hover{
+                            text-decoration: none;
+                            color: $base;
+                            &:before{
+                                width: 0%;
+                                background-color: $base;
+                            }
+                            &:after{
+                                width: 100%;
+                                background-color: $base;
+                            }
+                        }
+                    }
+                }
+            }
+            .clima_widget {
+                display: flex;
+                justify-content: space-evenly;
+                i{
+                    margin-top: 20px;
+                    font-size: 50px;
+                    color: transparentize(#000,.5);
+                }
+                .clima_datos {
+                    font-weight: bold;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+.nav-overlay{
+    background-color: #fff;
+    border-bottom: 1px solid transparentize($base,.9);
+    padding: 25px 0;
+    .logo{
+        img{
+            width: 80%;
+        }
+    }
+    ul{
+        margin-top: 8px;
+        li{
+            a{
+                color:$text;
+            }
+        }
+    }
+}
+
+// Slider Slippery
+#slider{
+    backface-visibility: hidden;
+    clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 0);
+}
+
+#slippry{
+    position: relative;
+    h1,h2,h3,h4,h5,h6,p,a,button{
+        position: absolute;
+    }
+    p{
+        width: 600px;
+    }
+    .white_bg{
+        background-color: transparentize(#fff,.2);
+        padding: 5px 10px;
+    }
+    .left{
+        left:200px;
+    }
+    .right{
+        right: 200px;
+    }
+    .top_250{
+        top:250px;
+    }
+    .top_300{
+        top: 300px;
+    }
+    .top_375{
+        top: 375px;
+    }
+    .top_400{
+        top: 400px;
+    }
+    .top_450{
+        top: 450px;
+    }
+}
+
+////////////////////////////////////////////////////
+/// FOOTER
+////////////////////////////////////////////////////
+
+footer{
+    margin-top: -60px;
+    width: 100%;
+    background-color: $base;
+    padding: 70px 0px;
+    clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 100%, 0% 100%);
+    .container{
+        .row{
+            p{
+                margin: 0;
+                padding: 0;
+                strong{
+                    color: transparentize(#fff,.6)
+                }
+            }
+            .white{
+                margin-top: 20px;
+                color: transparentize(#fff, .7);
+            }
+            ul{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                li{
+                    padding: 0;
+                    margin: 0;
+                    color: trasnparentize(#fff, .8)
+                }
+            }
+            .col-xl-2{
+                hr{
+                    border-radius: 10px;
+                    background-color: transparentize(#fff, .22);
+                }
+            }
+            
+            .social-networks{
+                margin-top: 5px;
+                li{
+                    display: inline-block;
+                    position: relative;
+                    margin: 10px 7px;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    transform: rotate(0deg);
+                    backface-visibility: hidden;
+                    cursor: pointer;
+                    @extend .tSlow;
+                    i{
+                        font-size: 22px;
+                        color: transparentize(rgb(255, 255, 255), .8);
+                        transform: rotate(0deg) translate(-3px, 3px);
+                        backface-visibility: hidden;
+                        @extend .tSlow;
+                    }
+                    &:hover{
+                        transform: rotate(45deg);
+                        background-color: #fff;
+                        backface-visibility: hidden;
+                        i{
+                            color: $base;
+                            transform: rotate(-45deg) translate(-3px, 3px)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .instagram{
+        position: relative;
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 20%;
+        filter: grayscale(100);
+        cursor: pointer;
+        @extend .tSlow;
+        opacity: .7;
+        &:hover{
+            opacity: 1;
+            filter: none;
+        }
+    }
+    
+}
+.copy{
+    padding: 10px 0;
+    background-color: lighten($base, 1);
+    text-align: left;
+    p, a{
+        margin: 0;
+        padding: 0;
+        color: transparentize(#fff, .7);
+    }
+    a{
+        opacity: .5;
+        color: $outline;
+        @extend .tSlow;
+        &:hover{
+            opacity: 1;
+            text-decoration: none;
+        }
+    }
+}
