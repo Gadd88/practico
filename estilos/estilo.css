@@ -14,7 +14,7 @@ p {
   color: #494949;
 }
 
-.tSlow, .copy a, footer .instagram, footer .container .row .social-networks li i, footer .container .row .social-networks li, body header nav ul li a:after, body header nav ul li a:before, body header nav ul li a, body header nav ul .link-active a:after, body header nav ul, body header nav .logo img, body header nav, button, input, select, option, textarea, .rombo, .diamante, .rounded-circle, a {
+.tSlow, .copy a, footer .instagram, footer .container .row .social-networks li i, footer .container .row .social-networks li, .grid .grid-item, body header nav ul li a:after, body header nav ul li a:before, body header nav ul li a, body header nav ul .link-active a:after, body header nav ul, body header nav .logo img, body header nav, button, input, select, option, textarea, .rombo, .diamante, .rounded-circle, a {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -124,7 +124,7 @@ body header nav {
 body header nav:hover {
   background-color: #fff;
   padding: 25px 0;
-  border: 1px solid transparent(#060a0f, 0.9);
+  border-bottom: 1px solid transparent(#060a0f, 0.9);
 }
 body header nav:hover .logo img {
   width: 80%;
@@ -140,7 +140,7 @@ body header nav .logo img {
 }
 body header nav ul {
   margin: 0;
-  margin-top: 15px;
+  margin-top: 25px;
   padding: 0;
   text-align: right;
 }
@@ -196,11 +196,12 @@ body header nav .clima_widget {
   justify-content: space-evenly;
 }
 body header nav .clima_widget i {
-  margin-top: 20px;
+  margin-top: 5px;
   font-size: 50px;
   color: rgba(0, 0, 0, 0.5);
 }
 body header nav .clima_widget .clima_datos {
+  margin-top: 1px;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -219,6 +220,50 @@ body header nav .clima_widget .clima_datos {
 }
 .nav-overlay ul li a {
   color: rgba(73, 73, 73, 0.5);
+}
+
+.grid {
+  width: 100%;
+  padding: 150px 0;
+}
+.grid::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.grid .grid-item {
+  width: 20%;
+  height: 150px;
+  padding-bottom: 20%;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  -o-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  cursor: pointer;
+  margin-top: -110px;
+}
+.grid .grid-item::before {
+  pointer-events: none;
+}
+.grid .grid-item:nth-child(6), .grid .grid-item:nth-child(15) {
+  margin-left: 130px;
+}
+.grid .grid-item a img {
+  width: 100%;
+  height: auto;
+}
+.grid .grid-item:hover::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 102, 0, 0.5);
+  background-repeat: no-repeat;
+  background-image: url("/img/cross.png");
+  background-size: 30%;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
 }
 
 #slider {
