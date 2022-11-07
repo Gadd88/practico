@@ -17,7 +17,7 @@
     <!-- Responsive -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximun-scale=1, user-scalable=0">
-    <title>Portfolio Nova Eventos</title>
+    <title>Contacto Nova Eventos</title>
 
     <!-- Social Cards -->
 
@@ -42,7 +42,7 @@
 </head>
 <body onload="onLoad()">
     <header>
-        <nav id="nav">
+        <nav id="nav" class="nav-overlay">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-2">
@@ -73,15 +73,31 @@
         </nav>
     </header>
     <main>
-        <section id="contacto" class="pad_200">
-            <div class="container">
+        <section id="contacto" class="contacto pad_200">
+            <ul>
+                <li class="google-map"></li>
+                <li class="formulario">
+                    <h3>Déjanos un mensaje</h3>
+                    <form action="" method="POST" id="formulario">
+                        <input type="name" name="nombre" placeholder="Tu nombre" id="nombre">
+                        <input type="email" name="email" placeholder="Tu e-mail" id="email""">
+                        <input type="tel" name="tel" placeholder="Tu teléfono" id="tel">
+                        <textarea name="mensaje" placeholder="Tu mensaje.." id="mensaje"></textarea>
+                        <button class="black" type="submit" name="submit">Enviar mensaje</button>
+                    </form>
+                    <div id="form_error">
+                        <p></p>
+                    </div>
+                </li>
+            </ul>
+            <!-- <div class="container">
                 <div class="row">
                     <div class="col">
                         <h2 class="center main-title">Formulario de Contacto</h2>
                         <h4 class="center">Comunicate con <strong>nosotros</strong> y capturemos tus <strong>momentos.</strong></h4>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
     </main>
     <!-- FOOTER -->
@@ -91,10 +107,10 @@
                 <div class="col-xl-2">
                     <p class="white"><strong>Mapa del sitio</strong></p>
                     <ul class="white">
-                        <li class="white small">Inicio</li>
-                        <li class="white small">Nosotros</li>
-                        <li class="white small">Portfolio</li>
-                        <li class="white small">Contacto</li>
+                        <li class="white small"><a href="index.html">Inicio</a></li>
+                        <li class="white small"><a href="index.html#nosotros">Nosotros</a></li>
+                        <li class="white small"><a href="portfolio.html">Portfolio</a></li>
+                        <li class="white small"><a href="contacto.html">Contacto</a></li>
                         <hr>
                         <li class="white small">Contrato</li>
                         <li class="white small">Servicios</li>
@@ -167,5 +183,7 @@
     </script>
     <!-- Clima Api -->
     <script src="js/clima.js"></script>
+    <!-- Validacion Formulario -->
+    <script src="/js/validacion.js"></script>
 </body>
 </html>

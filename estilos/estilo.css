@@ -1,9 +1,8 @@
 a {
   margin: 0px;
+  text-decoration: none;
+  color: #060a0f;
   padding: 0px;
-}
-a:hover {
-  color: #ff6600;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -100,6 +99,9 @@ button {
 button:hover {
   opacity: 1;
   background-color: #060a0f;
+  color: #fff;
+}
+button:hover a {
   color: #fff;
 }
 
@@ -266,6 +268,34 @@ body header nav .clima_widget .clima_datos {
   height: 100%;
 }
 
+.contacto {
+  width: 100%;
+  height: 100vh;
+}
+.contacto ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.contacto ul .google-map {
+  width: 50%;
+  height: 90vh;
+  background-image: url("/img/maps.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.contacto ul li {
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+.contacto ul .formulario {
+  width: 50%;
+  height: 90vh;
+  padding: 150px 50px;
+  background-color: #fff;
+}
+
 #slider {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -335,7 +365,15 @@ footer .container .row ul {
 footer .container .row ul li {
   padding: 0;
   margin: 0;
-  color: trasnparentize(#fff, 0.8);
+  color: rgba(255, 255, 255, 0.2);
+}
+footer .container .row ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+footer .container .row ul li a:hover {
+  text-decoration: underline;
 }
 footer .container .row .col-xl-2 hr {
   border-radius: 10px;

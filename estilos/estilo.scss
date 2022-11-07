@@ -12,11 +12,10 @@ $text: transparentize($sec, .5);
 
 a{
     margin: 0px;
+    text-decoration: none;
+    color: $base;
     padding: 0px;
     @extend .tSlow;
-    &:hover{
-        color: $outline;
-    }
 }
 h1,h2,h3,h4,h5,h6{
     color: $base;
@@ -118,6 +117,9 @@ button{
     &:hover{
         opacity: 1;
         background-color: $base;
+        color: #fff;
+    }
+    &:hover a{
         color: #fff;
     }
 }
@@ -326,6 +328,39 @@ body{
 
 
 
+////////////////////////////////////////
+/// Estilos de CONTACTO
+/// ////////////////////////////////////
+.contacto{
+    width: 100%;
+    height: 100vh;
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        .google-map{
+            width: 50%;
+            height: 90vh;
+            background-image: url("/img/maps.jpg");
+            background-position: center center;
+            background-size: cover;
+        }
+        li{
+            float: left;
+            padding: 0;
+            margin: 0;
+        }
+        .formulario{
+            width: 50%;
+            height: 90vh;
+            padding: 150px 50px;
+            background-color: #fff;
+        }
+    }
+
+}
+
+
 ///////////////////////////////////
 // Slider Slippery
 ///////////////////////////////////
@@ -399,7 +434,15 @@ footer{
                 li{
                     padding: 0;
                     margin: 0;
-                    color: trasnparentize(#fff, .8)
+                    color: transparentize(#fff, .8);
+                    a{
+                        text-decoration: none;
+                        color: transparentize(#fff, .8);
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
             .col-xl-2{
